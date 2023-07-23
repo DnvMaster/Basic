@@ -23,18 +23,27 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">№</th>
-                                    <th scope="col">Имя</th>
-                                    <th scope="col">Почта</th>
-                                    <th scope="col">Дата</th>
+                                    <th scope="col">Категория</th>
+                                    <th scope="col">Пользователь</th>
+                                    <th scope="col">Дата создания</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    @php($i = 1)
+                                    @foreach($categories as $category)
+                                        <tr>
+                                            <th scope="row">{{ $i++ }}</th>
+                                            <td>{{ $category->category_name }}</td>
+                                            <td>{{ $category->user_id }}</td>
+                                            <td>
+                                                @if($category->created_at == NULL)
+                                                    <span class="text-danger">Дата не установлена</span>
+                                                @else
+                                                    {{ $category->created_at->diffForHumans() }}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
