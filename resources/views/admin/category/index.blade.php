@@ -44,7 +44,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-info" href="{{ url('category/edit/'.$category->id) }}">Редактировать</a>
-                                                <a class="btn btn-danger" href="">Удалить</a>
+                                                <a class="btn btn-danger" href="{{ url('delete/category/'.$category->id) }}">В корзину</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -72,6 +72,46 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-header">Список удалённых категорий</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">№</th>
+                                    <th scope="col">Категория</th>
+                                    <th scope="col">Пользователь</th>
+                                    <th scope="col">Дата создания</th>
+                                    <th scope="col">Действие</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($trash as $category)
+                                    <tr>
+                                        <th scope="row">{{ $categories->firstItem()+$loop->index }}</th>
+                                        <td>{{ $category->category_name }}</td>
+                                        <td>{{ $category->user->name }}</td>
+                                        <td>
+                                            @if($category->created_at == NULL)
+                                                <span class="text-danger">Дата не установлена</span>
+                                            @else
+                                                {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-info" href="{{ url('category/edit/'.$category->id) }}">Редактировать</a>
+                                            <a class="btn btn-danger" href="{{ url('category/delete/'.$category->id) }}">Удалить</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            {{ $trash->links() }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
             </div>
         </div>
     </div>
