@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <div class="card">
                         @if(session('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -26,6 +26,7 @@
                                     <th scope="col">Категория</th>
                                     <th scope="col">Пользователь</th>
                                     <th scope="col">Дата создания</th>
+                                    <th scope="col">Действие</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -41,6 +42,10 @@
                                                     {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}
                                                 @endif
                                             </td>
+                                            <td>
+                                                <a class="btn btn-info" href="{{ url('category/edit/'.$category->id) }}">Редактировать</a>
+                                                <a class="btn btn-danger" href="">Удалить</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -49,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <div class="card">
                         <div class="card-header">Добавить категорию</div>
                         <div class="card-body">
@@ -62,7 +67,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary">Создать категорию</button>
+                                <button type="submit" class="btn btn-primary">Создать</button>
                             </form>
                         </div>
                     </div>

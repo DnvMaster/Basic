@@ -15,6 +15,7 @@ class Category extends Model
     ];
     public function user()
     {
+        // One by one relationship
         return $this->hasOne(User::class,'id','user_id');
     }
 }
