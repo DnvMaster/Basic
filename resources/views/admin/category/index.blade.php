@@ -39,7 +39,7 @@
                                                 @if($category->created_at == NULL)
                                                     <span class="text-danger">Дата не установлена</span>
                                                 @else
-                                                    {{ $category->created_at->diffForHumans() }}
+                                                    {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}
                                                 @endif
                                             </td>
                                         </tr>
