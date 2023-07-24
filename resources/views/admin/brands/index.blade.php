@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="card">
                         @if(session('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -34,7 +34,7 @@
                                     <tr>
                                         <th scope="row">{{ $brands->firstItem()+$loop->index }}</th>
                                         <td>{{ $brand->brand_name }}</td>
-                                        <td><img src="" alt="" title=""></td>
+                                        <td><img src="{{ asset($brand->brand_image) }}" alt="{{ $brand->brand_name }}" title="{{ $brand->brand_name }}" style="height: 40px; width: 70px;"></td>
                                         <td>
                                             @if($brand->created_at == NULL)
                                                 <span class="text-danger">Дата не установлена</span>
@@ -43,7 +43,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a class="btn btn-info" href="{{ url('brand/edit/'.$brand->id) }}">Редактировать</a>
+                                            <a class="btn btn-info" href="{{ url('brand/edit/'.$brand->id) }}">Изменить</a>
                                             <a class="btn btn-danger" href="{{ url('brand/delete/'.$brand->id) }}">В корзину</a>
                                         </td>
                                     </tr>
@@ -54,11 +54,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
                         <div class="card-header">Добавить бренд</div>
                         <div class="card-body">
-                            <form action="" method="post">
+                            <form action="{{ route('store.brand') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail">Название бренда</label>

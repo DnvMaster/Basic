@@ -100,7 +100,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a class="btn btn-info" href="{{ url('category/restore/'.$category->id) }}">Восстановить</a>
+                                            <a class="btn btn-info" href="{{ url('category/restore/'.$category->id) }}">Вернуть</a>
                                             <a class="btn btn-danger" href="{{ url('category/complete-removal/'.$category->id) }}">Удалить</a>
                                         </td>
                                     </tr>

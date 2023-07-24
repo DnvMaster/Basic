@@ -43,6 +43,7 @@ Route::get('/category/restore/{id}',[CategoryController::class,'restoreCategory'
 Route::get('category/complete-removal/{id}',[CategoryController::class,'completeRemovalCategory']);
 
 Route::get('/brands/all',[BrandController::class,'Brands'])->name('brands');
+Route::post('/brand/add',[BrandController::class,'storeBrands'])->name('store.brand');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $users = User::all();
