@@ -20,6 +20,10 @@
                         Все категории
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('brands') }}">
+                        Бренды
+                    </x-jet-nav-link>
+
                 </div>
             </div>
 
