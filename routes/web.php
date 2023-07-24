@@ -37,7 +37,9 @@ Route::post('/category/add',[CategoryController::class,'addCategory'])->name('ca
 
 Route::get('/category/edit/{id}',[CategoryController::class,'editCategory']);
 Route::post('/category/update/{id}',[CategoryController::class,'updateCategory']);
-Route::get('/delete/category/{id}',[CategoryController::class,'deleteCategory']);
+Route::get('/category/delete/{id}',[CategoryController::class,'deleteCategory']);
+Route::get('/category/restore/{id}',[CategoryController::class,'restoreCategory']);
+Route::get('category/complete-removal/{id}',[CategoryController::class,'completeRemovalCategory']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $users = User::all();
