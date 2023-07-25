@@ -42,8 +42,9 @@ Route::get('/category/delete/{id}',[CategoryController::class,'deleteCategory'])
 Route::get('/category/restore/{id}',[CategoryController::class,'restoreCategory']);
 Route::get('category/complete-removal/{id}',[CategoryController::class,'completeRemovalCategory']);
 
-Route::get('/brands/all',[BrandController::class,'Brands'])->name('brands');
-Route::post('/brand/add',[BrandController::class,'storeBrands'])->name('store.brand');
+Route::get('/brands/all',[BrandController::class,'Brand'])->name('brands');
+Route::post('/brand/add',[BrandController::class,'storeBrand'])->name('store.brand');
+Route::get('/brand/edit/{id}',[BrandController::class,'brandsEdit']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $users = User::all();

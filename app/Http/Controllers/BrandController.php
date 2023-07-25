@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    public function Brands()
+    public function Brand()
     {
         $brands = Brand::latest()->paginate(5);
         return view('admin.brands.index',compact('brands'));
@@ -35,5 +35,10 @@ class BrandController extends Controller
             'created_at'=> Carbon::now(),
             ]);
         return Redirect()->back()->with('success','Бренд успешно устаовлен.');
+    }
+    public function brandsEdit($id)
+    {
+        $brands = Brand::find($id);
+        return view('admin.brands.edit',compact('brands'));
     }
 }

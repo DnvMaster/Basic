@@ -17,7 +17,7 @@
                                     <label for="exampleInputEmail">Обновить название категории</label>
                                     <input type="text" name="category_name" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="{{ $categories->category_name }}">
                                     @error('category_name')
-                                    <span class="text-danger">{{ $message }}</span>
+                                        <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <button type="submit" class="btn btn-primary">Обновить</button>
