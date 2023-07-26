@@ -44,7 +44,7 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-info" href="{{ url('brand/edit/'.$brand->id) }}">Изменить</a>
-                                            <a class="btn btn-danger" href="{{ url('brand/delete/'.$brand->id) }}">В корзину</a>
+                                            <a class="btn btn-danger" href="{{ url('brand/delete/'.$brand->id) }}" onclick="return confirm('Вы действительно хотите удалить данный бренд !')">Удалить</a>
                                         </td>
                                     </tr>
                                 @endforeach
