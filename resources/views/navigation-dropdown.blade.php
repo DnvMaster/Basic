@@ -24,6 +24,9 @@
                         Бренды
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('images') }}">
+                        Изображения
+                    </x-jet-nav-link>
                 </div>
             </div>
 

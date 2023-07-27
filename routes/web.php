@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ImagesController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -47,6 +48,8 @@ Route::post('/brand/add',[BrandController::class,'storeBrand'])->name('store.bra
 Route::get('/brand/edit/{id}',[BrandController::class,'editBrand']);
 Route::post('/brand/update/{id}',[BrandController::class,'updateBrand']);
 Route::get('/brand/delete/{id}',[BrandController::class,'deleteBrand']);
+
+Route::get('images/all',[ImagesController::class,'Images'])->name('images');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $users = User::all();
