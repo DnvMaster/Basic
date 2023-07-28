@@ -50,6 +50,7 @@ Route::post('/brand/update/{id}',[BrandController::class,'updateBrand']);
 Route::get('/brand/delete/{id}',[BrandController::class,'deleteBrand']);
 
 Route::get('images/all',[ImagesController::class,'Images'])->name('images');
+Route::post('/images/add',[ImagesController::class,'allImages'])->name('all-images');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $users = User::all();
