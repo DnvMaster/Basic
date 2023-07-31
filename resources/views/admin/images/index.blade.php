@@ -20,7 +20,7 @@
                         <div class="card-header">Все изображения</div>
                         <div class="card-group">
                             @foreach($images as $image)
-                                <div class="col-sm-3 mt-5">
+                                <div class="col-sm-3 mt-5 mb-4">
                                     <div class="card">
                                         <img src="{{ asset($image->image) }}" alt="Images">
                                     </div>
