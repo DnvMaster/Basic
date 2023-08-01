@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
@@ -62,3 +63,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // return view('dashboard',compact('users'));
     return view('admin.index');
 })->name('dashboard');
+
+Route::get('/user/logout',[IndexController::class,'Logout'])->name('logout');
