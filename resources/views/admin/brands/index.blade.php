@@ -1,33 +1,28 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Все Бренды <b></b></h2>
-    </x-slot>
+@extends('admin.admin_master')
 
+@section('admin')
     <div class="py-12">
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <div class="card">
-                        @if(session('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>{{ session('success') }}</strong>
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ session('success') }}</strong>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                         @endif
-                        <div class="card-header">Все бренды</div>
                         <div class="card-body">
                             <table class="table">
                                 <thead>
-                                <tr>
-                                    <th scope="col">№</th>
-                                    <th scope="col">Бренд</th>
-                                    <th scope="col">Изображение</th>
-                                    <th scope="col">Дата создания</th>
-                                    <th scope="col">Действие</th>
-                                </tr>
+                                    <tr>
+                                        <th scope="col">№</th>
+                                        <th scope="col">Бренд</th>
+                                        <th scope="col">Изображение</th>
+                                        <th scope="col">Дата создания</th>
+                                        <th scope="col">Действие</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($brands as $brand)
@@ -52,7 +47,6 @@
                             </table>
                             {{ $brands->links() }}
                         </div>
-                    </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card">
@@ -81,4 +75,4 @@
                 </div>
             </div>
         </div>
-</x-app-layout>
+@endsection

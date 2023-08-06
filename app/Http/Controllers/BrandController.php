@@ -6,6 +6,7 @@ use App\Models\Brand;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Image;
+use DB;
 
 class BrandController extends Controller
 {
@@ -13,6 +14,11 @@ class BrandController extends Controller
 	{
 		$this->middleware('auth');
 	}
+    public function index()
+    {
+        $brands = DB::table('brands')->get();
+        return view('home',compact('brands'));
+    }
     public function Brand()
     {
         $brands = Brand::latest()->paginate(5);

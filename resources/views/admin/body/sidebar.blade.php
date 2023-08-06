@@ -31,22 +31,27 @@
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
                        aria-expanded="false" aria-controls="dashboard">
                         <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span class="nav-text">Панель управления</span><b class="caret"></b>
+                        <span class="nav-text">Панель</span><b class="caret"></b>
                     </a>
                     <ul class="collapse show" id="dashboard"
                         data-parent="#sidebar-menu">
                         <div class="sub-menu">
+
                             <li class="active">
                                 <a class="sidenav-item-link" href="index.html">
-                                    <span class="nav-text">Комерция</span>
+                                    <span class="nav-text">Главная</span>
+                                </a>
+                            </li><li class="active">
+                                <a class="sidenav-item-link" href="index.html">
+                                    <span class="nav-text">Главная</span>
                                 </a>
                             </li>
-                            <li>
-                                <a class="sidenav-item-link" href="analytics.html">
-                                    <span class="nav-text">Аналитика</span>
-                                    <span class="badge badge-success">new</span>
+                            <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('brands') }}">
+                                    <span class="nav-text">Бренды</span>
                                 </a>
                             </li>
+
                         </div>
                     </ul>
                 </li>
