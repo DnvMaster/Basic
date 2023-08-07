@@ -46,6 +46,7 @@ Route::get('/category/delete/{id}',[CategoryController::class,'deleteCategory'])
 Route::get('/category/restore/{id}',[CategoryController::class,'restoreCategory']);
 Route::get('category/complete-removal/{id}',[CategoryController::class,'completeRemovalCategory']);
 
+Route::get('/sliders/all',[\App\Http\Controllers\SliderController::class,'AllSliders'])->name('sliders');
 Route::get('/brands/all',[BrandController::class,'Brand'])->name('brands');
 Route::post('/brand/add',[BrandController::class,'storeBrand'])->name('store.brand');
 Route::get('/brand/edit/{id}',[BrandController::class,'editBrand']);

@@ -38,12 +38,18 @@
                         <div class="sub-menu">
 
                             <li class="active">
-                                <a class="sidenav-item-link" href="index.html">
+                                <a class="sidenav-item-link" href="{{ route('dashboard') }}">
                                     <span class="nav-text">Главная</span>
                                 </a>
-                            </li><li class="active">
-                                <a class="sidenav-item-link" href="index.html">
-                                    <span class="nav-text">Главная</span>
+                            </li>
+                            <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('sliders') }}">
+                                    <span class="nav-text">Слайдер</span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('all.category') }}">
+                                    <span class="nav-text">Категории</span>
                                 </a>
                             </li>
                             <li class="active">
