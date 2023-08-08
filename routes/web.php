@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
@@ -37,16 +38,19 @@ Route::get('/about', function ()
 });
 
 Route::get('/contact',[ContactController::class,'index'])->name('contact');
+
+Route::get('/sliders/all',[SliderController::class,'AllSliders'])->name('sliders');
+Route::get('/sliders/add',[SliderController::class,'AddSliders'])->name('sliders.add');
+Route::post('/sliders/store',[SliderController::class,'StoreSliders'])->name('sliders.store');
+
 Route::get('/category/all',[CategoryController::class,'allCategory'])->name('all.category');
 Route::post('/category/add',[CategoryController::class,'addCategory'])->name('category.add');
-
 Route::get('/category/edit/{id}',[CategoryController::class,'editCategory']);
 Route::post('/category/update/{id}',[CategoryController::class,'updateCategory']);
 Route::get('/category/delete/{id}',[CategoryController::class,'deleteCategory']);
 Route::get('/category/restore/{id}',[CategoryController::class,'restoreCategory']);
 Route::get('category/complete-removal/{id}',[CategoryController::class,'completeRemovalCategory']);
 
-Route::get('/sliders/all',[\App\Http\Controllers\SliderController::class,'AllSliders'])->name('sliders');
 Route::get('/brands/all',[BrandController::class,'Brand'])->name('brands');
 Route::post('/brand/add',[BrandController::class,'storeBrand'])->name('store.brand');
 Route::get('/brand/edit/{id}',[BrandController::class,'editBrand']);

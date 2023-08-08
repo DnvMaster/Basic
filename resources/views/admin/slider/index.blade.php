@@ -14,7 +14,7 @@
                                 </button>
                             </div>
                         @endif
-                        <div class="card-headewr">Все слайды</div>
+                        <div class="card-header">Все слайды</div>
                             <div class="card-body">
                                 <table class="table">
                                     <thead>
@@ -27,23 +27,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @php($i = 1)
                                     @foreach($sliders as $slider)
                                         <tr>
-                                            <th scope="row">{{ $sliders->firstItem()+$loop->index }}
-                                            </th>
+                                            <th scope="row">{{ $i++ }}</th>
                                             <td>{{ $slider->title }}</td>
                                             <td>{{ $slider->description }}</td>
                                             <td><img src="{{ asset($slider->image) }}" alt="{{ $slider->title }}" style="width: 40px; height: 70px;"></td>
                                             <td>
-                                                @if($slider->created_at == NULL)
-                                                    <span class="text-danger">Дата не установлена</span>
-                                                @else
-                                                    {{ Carbon\Carbon::parse($slider->created_at)->diffForHumans() }}
-                                                @endif
-                                            </td>
-                                            <td>
                                                 <a class="btn btn-info" href="{{ url('slider/edit/'.$slider->id) }}">Редактировать</a>
-                                                <a class="btn btn-danger" href="{{ url('delete/slider/'.$category->id) }}">В корзину</a>
+                                                <a class="btn btn-danger" href="{{ url('delete/slider/'.$slider->id) }}">В корзину</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -52,7 +45,7 @@
                             </div>
                     </div>
                 </div>
-                <a href=""><button class="btn btn-success mt-5">Добавить</button></a>
+                <a href="{{ route('sliders.add') }}"><button class="btn btn-success mt-5">Добавить</button></a>
             </div>
         </div>
     </div>
