@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
@@ -37,7 +38,7 @@ Route::get('/about', function ()
     return view('about');
 });
 
-Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::get('/about/all',[AboutController::class,'index'])->name('about.all');
 
 Route::get('/sliders/all',[SliderController::class,'AllSliders'])->name('sliders');
 Route::get('/sliders/add',[SliderController::class,'AddSliders'])->name('sliders.add');
@@ -56,6 +57,8 @@ Route::post('/brand/add',[BrandController::class,'storeBrand'])->name('store.bra
 Route::get('/brand/edit/{id}',[BrandController::class,'editBrand']);
 Route::post('/brand/update/{id}',[BrandController::class,'updateBrand']);
 Route::get('/brand/delete/{id}',[BrandController::class,'deleteBrand']);
+
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
 
 Route::get('images/all',[ImagesController::class,'Images'])->name('images');
 Route::post('/images/add',[ImagesController::class,'allImages'])->name('all-images');

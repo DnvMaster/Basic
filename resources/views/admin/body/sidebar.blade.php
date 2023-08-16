@@ -43,6 +43,11 @@
                                 </a>
                             </li>
                             <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('about.all') }}">
+                                    <span class="nav-text">О нас</span>
+                                </a>
+                            </li>
+                            <li class="active">
                                 <a class="sidenav-item-link" href="{{ route('sliders') }}">
                                     <span class="nav-text">Слайдер</span>
                                 </a>
