@@ -50,6 +50,7 @@
                         </table>
                     </div>
                 </div>
+                <a class="btn btn-info" href="{{ route('about.add') }}">Добавить</a>
             </div>
         </div>
     </div>

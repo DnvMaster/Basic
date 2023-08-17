@@ -40,7 +40,9 @@ Route::get('/about', function ()
 
 Route::get('/about/all',[AboutController::class,'index'])->name('about.all');
 Route::get('/about/add',[AboutController::class,'aboutAdd'])->name('about.add');
-Route::post('/about/create',[AboutController::class,'aboutCreate'])->name('about.create');
+Route::get('/about/create',[AboutController::class,'aboutCreate'])->name('about.create');
+Route::get('/about/edit/{id}',[AboutController::class,'aboutEdit']);
+Route::get('update/about/{id}',[AboutController::class,'aboutUpdate']);
 
 Route::get('/sliders/all',[SliderController::class,'AllSliders'])->name('sliders');
 Route::get('/sliders/add',[SliderController::class,'AddSliders'])->name('sliders.add');

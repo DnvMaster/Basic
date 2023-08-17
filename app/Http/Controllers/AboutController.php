@@ -27,4 +27,19 @@ class AboutController extends Controller
         ]);
         return Redirect()->route('about.all')->with('success','Данные о нас, успешно добавлены.');
     }
+    public function aboutEdit($id)
+    {
+        $edit = About::find($id);
+        return view('admin.about.edit',compact('edit'));
+    }
+    public function aboutUpdate(Request $request, $id)
+    {
+        $update = About::find($id)->update([
+            'title' => $request->title,
+            'about' => $request->about,
+            'description' => $request->description,
+            'created_at' => Carbon::now(),
+        ]);
+        return Redirect()->route('about.all')->with('success','Данные успешно обновлены.');
+    }
 }
