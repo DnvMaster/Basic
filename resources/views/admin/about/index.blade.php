@@ -41,7 +41,8 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a class="btn btn-success" href="#">Добавить</a>
+                                            <a class="btn btn-info" href="{{ url('about/edit/'.$about->id) }}">Изменить</a>
+                                            <a class="btn btn-danger" href="{{ url('about/delete/'.$about->id) }}" onclick="return confirm('Вы действительно хотите удалить раздел о нас !')">Удалить</a>
                                         </td>
                                     </tr>
                                 @endforeach
