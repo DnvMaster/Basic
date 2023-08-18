@@ -42,4 +42,9 @@ class AboutController extends Controller
         ]);
         return Redirect()->route('about.all')->with('success','Данные успешно обновлены.');
     }
+    public function aboutDelete($id)
+    {
+        $delete = About::find($id)->delete();
+        return Redirect()->route('about.all')->with('success','Данные раздела о нас, успешно удалены.');
+    }
 }
