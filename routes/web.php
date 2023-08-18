@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use \App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
@@ -32,6 +33,11 @@ Route::get('/home', function ()
 {
     echo "This is home page";
 });
+
+Route::get('/sliders/all',[SliderController::class,'AllSliders'])->name('sliders');
+Route::get('/sliders/add',[SliderController::class,'AddSliders'])->name('sliders.add');
+Route::post('/sliders/store',[SliderController::class,'StoreSliders'])->name('sliders.store');
+
 Route::get('home',[HomeController::class,'index']);
 Route::get('/about/all',[AboutController::class,'index'])->name('about.all');
 Route::get('/about/add',[AboutController::class,'aboutAdd'])->name('about.add');
@@ -40,9 +46,12 @@ Route::get('/about/edit/{id}',[AboutController::class,'aboutEdit']);
 Route::get('/about/update/{id}',[AboutController::class,'aboutUpdate']);
 Route::get('/about/delete/{id}',[AboutController::class,'aboutDelete']);
 
-Route::get('/sliders/all',[SliderController::class,'AllSliders'])->name('sliders');
-Route::get('/sliders/add',[SliderController::class,'AddSliders'])->name('sliders.add');
-Route::post('/sliders/store',[SliderController::class,'StoreSliders'])->name('sliders.store');
+Route::get('/service/all',[ServiceController::class,'index'])->name('service.all');
+Route::get('/service/add',[ServiceController::class,'serviceAdd'])->name('service.add');
+Route::post('/service/create',[ServiceController::class,'serviceCreate'])->name('service.create');
+//Route::get('/service/edit/{id}',[ServiceController::class,'serviceEdit']);
+//Route::get('/service/update/{id}',[ServiceController::class,'serviceUpdate']);
+//Route::get('/service/delete/{id}',[ServiceController::class,'serviceDelete']);
 
 Route::get('/category/all',[CategoryController::class,'allCategory'])->name('all.category');
 Route::post('/category/add',[CategoryController::class,'addCategory'])->name('category.add');

@@ -68,6 +68,7 @@ class BrandController extends Controller
             'brand_name.required'=>'Пожалуйста, введите название бренда.',
             'brand_image.min'=> 'Название бренда должно быть больше 4 символов.',
         ]);
+
         $old_image = $request->old_image;
         $brand_image = $request->file('brand_image');
 
