@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ContactController;
@@ -26,18 +27,12 @@ Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
-Route::get('/',[BrandController::class,'index']);
 
 Route::get('/home', function ()
 {
     echo "This is home page";
 });
-
-Route::get('/about', function ()
-{
-    return view('about');
-});
-
+Route::get('home',[HomeController::class,'index']);
 Route::get('/about/all',[AboutController::class,'index'])->name('about.all');
 Route::get('/about/add',[AboutController::class,'aboutAdd'])->name('about.add');
 Route::get('/about/create',[AboutController::class,'aboutCreate'])->name('about.create');
@@ -57,6 +52,7 @@ Route::get('/category/delete/{id}',[CategoryController::class,'deleteCategory'])
 Route::get('/category/restore/{id}',[CategoryController::class,'restoreCategory']);
 Route::get('category/complete-removal/{id}',[CategoryController::class,'completeRemovalCategory']);
 
+Route::get('/',[BrandController::class,'index']);
 Route::get('/brands/all',[BrandController::class,'Brand'])->name('brands');
 Route::post('/brand/add',[BrandController::class,'storeBrand'])->name('store.brand');
 Route::get('/brand/edit/{id}',[BrandController::class,'editBrand']);

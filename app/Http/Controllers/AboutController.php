@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use DB;
 
 class AboutController extends Controller
 {
     public function index()
     {
-        $abouts = \DB::table('abouts')->latest()->get();
+        $abouts = DB::table('abouts')->latest()->get();
         return view('admin.about.index',compact('abouts'));
     }
     public function aboutAdd()
