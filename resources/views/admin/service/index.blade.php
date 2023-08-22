@@ -17,11 +17,10 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th scope="col">№</th>
-                                <th scope="col">Заголовок</th>
-                                <th scope="col">Иконка</th>
-                                <th scope="col">Параграф</th>
-                                <th scope="col">Полный текст</th>
+                                <th scope="col" width="5%">№</th>
+                                <th scope="col" width="10%">Иконка</th>
+                                <th scope="col" width="`15%">Заголовок</th>
+                                <th scope="col" width="45%">Текст</th>
                                 <th scope="col">Дата создания</th>
                                 <th scope="col">Действие</th>
                             </tr>
@@ -31,9 +30,8 @@
                             @foreach($services as $service)
                                 <tr>
                                     <th scope="row">{{ $i++ }}</th>
+                                    <td>{{ $service->icon }}</td>
                                     <td>{{ $service->title }}</td>
-                                    <td>{{ $service->image }}</td>
-                                    <td>{{ $service->paragraph }}</td>
                                     <td>{{ $service->text }}</td>
                                     <td>
                                         @if($service->created_at == NULL)

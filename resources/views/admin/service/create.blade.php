@@ -15,22 +15,19 @@
                     <div class="card-body">
                         <h4>Раздел Сервис</h4>
                     </div>
-                        <form action="{{ route('service.create') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('service.create') }}" method="post">
                             @csrf
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Выберите иконку</label>
+                                <input type="text" name="icon" class="form-control" id="exampleFormControlInput">
+                            </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput">Заголовок</label>
                                 <input type="text" name="title" class="form-control" id="exampleFormControlInput" placeholder="Введите заголовок">
                             </div>
+
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Выберите иконку</label>
-                                <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput">Параграф</label>
-                                <input type="text" name="paragraph" class="form-control" id="exampleFormControlInput" placeholder="Введите заголовок">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Полный текст</label>
+                                <label for="exampleFormControlTextarea1">Описание</label>
                                 <textarea class="form-control" name="text" rows="3" id="exampleFormControlTextarea1"></textarea>
                             </div>
                             <div class="form-footer pt-4 pt-5 mt-4 border-top">

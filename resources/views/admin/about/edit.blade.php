@@ -1,4 +1,3 @@
-
 @extends('admin.admin_master');
 @section('admin')
     <div class="col-lg-12">

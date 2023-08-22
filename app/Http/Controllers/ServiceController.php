@@ -21,24 +21,31 @@ class ServiceController extends Controller
     public function serviceCreate(Request $request)
     {
         Service::insert([
+            'icon' => $request->icon,
             'title' => $request->title,
-            'image' => $request->image,
-            'paragraph' => $request->paragraph,
             'text' => $request->text,
             'created_at' => Carbon::now(),
         ]);
-        return Redirect()->route('service.all')->with('success','Данные о сервисе, успешно добавлены.');
+        return Redirect()->route('service.all')->with('success','Данные успешно добавлены.');
     }
-    public function serviceEdit()
+    public function serviceEdit($id)
     {
-        //
+        $edit = Service::find($id);
+        return view('admin.service.edit',compact('edit'));
     }
-    public function serviceUpdate()
+    public function serviceUpdate(Request $request, $id)
     {
-        //
+        $update = Service::find($id)->update([
+            'icon' => $request->icon,
+            'title' => $request->text,
+            'text' => $request->text,
+            'created_at' => Carbon::now(),
+        ]);
+        return Redirect()->route('service.all')->with('success','Данные успешно обновлены.');
     }
-    public function serviceDelete()
+    public function serviceDelete($id)
     {
-        //
+        $delete = Service::find($id)->delete();
+        return Redirect()->route('service.all')->with('success','Данные раздела сервис, успешно удалены.');
     }
 }

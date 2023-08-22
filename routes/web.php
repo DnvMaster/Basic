@@ -49,9 +49,9 @@ Route::get('/about/delete/{id}',[AboutController::class,'aboutDelete']);
 Route::get('/service/all',[ServiceController::class,'index'])->name('service.all');
 Route::get('/service/add',[ServiceController::class,'serviceAdd'])->name('service.add');
 Route::post('/service/create',[ServiceController::class,'serviceCreate'])->name('service.create');
-//Route::get('/service/edit/{id}',[ServiceController::class,'serviceEdit']);
-//Route::get('/service/update/{id}',[ServiceController::class,'serviceUpdate']);
-//Route::get('/service/delete/{id}',[ServiceController::class,'serviceDelete']);
+Route::get('/service/edit/{id}',[ServiceController::class,'serviceEdit']);
+Route::get('/service/update/{id}',[ServiceController::class,'serviceUpdate']);
+Route::get('/service/delete/{id}',[ServiceController::class,'serviceDelete']);
 
 Route::get('/category/all',[CategoryController::class,'allCategory'])->name('all.category');
 Route::post('/category/add',[CategoryController::class,'addCategory'])->name('category.add');
