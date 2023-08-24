@@ -18,6 +18,10 @@
                         <form action="{{ route('service.create') }}" method="post">
                             @csrf
                             <div class="form-group">
+                                <label for="exampleFormControlFile1">Выберите фон для иконки</label>
+                                <input type="text" name="iconbox" class="form-control" id="exampleFormControlInput">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleFormControlFile1">Выберите иконку</label>
                                 <input type="text" name="icon" class="form-control" id="exampleFormControlInput">
                             </div>

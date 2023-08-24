@@ -53,7 +53,7 @@ class BrandController extends Controller
             'brand_image'=> $last_img,
             'created_at'=> Carbon::now(),
             ]);
-        return Redirect()->back()->with('success','Бренд успешно устаовлен.');
+        return Redirect()->back()->with('success','Бренд успешно установлен.');
     }
     public function editBrand($id)
     {

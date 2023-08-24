@@ -25,7 +25,6 @@
                                 <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-
                                 <div class="form-group">
                                     <label for="exampleInputEmail">Обновить изображение бренда</label>
                                     <input type="file" name="brand_image" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="{{ $brands->brand_image }}">

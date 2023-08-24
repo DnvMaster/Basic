@@ -14,34 +14,39 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <form action="{{ url('services/update/'.$edit->id) }}" method="post">
+                        <form action="{{ url('services/update/'.$edit->id) }}" method="get">
                             @csrf
+                            <div class="form-group">
+                                <label for="exampleInputEmail">Обновить фон иконки</label>
+                                <input type="text" name="iconbox" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="{{ $edit->iconbox }}">
+                                @error('iconbox')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail">Обновить название иконки</label>
                                 <input type="text" name="icon" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="{{ $edit->icon }}">
                                 @error('icon')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-
                             <div class="form-group">
                                 <label for="exampleInputEmail">Обновить заголовок</label>
                                 <input type="text" name="title" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="{{ $edit->title }}">
                                 @error('title')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail">Обновить текст</label>
                                 <input type="text" name="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="{{ $edit->text }}">
                                 @error('text')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Обновить</button>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>

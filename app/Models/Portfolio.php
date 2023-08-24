@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Portfolio extends Model
 {
     use HasFactory;
-    protected $fillable = ['iconbox','icon','title','text'];
+    protected $fillable = ['img','title','text'];
 }

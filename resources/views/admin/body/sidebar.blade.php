@@ -58,6 +58,11 @@
                                 </a>
                             </li>
                             <li class="active">
+                                <a class="sidenav-item-link" href="{{ route('index') }}">
+                                    <span class="nav-text">Портфолио</span>
+                                </a>
+                            </li>
+                            <li class="active">
                                 <a class="sidenav-item-link" href="{{ route('all.category') }}">
                                     <span class="nav-text">Категории</span>
                                 </a>

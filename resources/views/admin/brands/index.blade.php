@@ -1,10 +1,9 @@
 @extends('admin.admin_master')
-
 @section('admin')
     <div class="py-12">
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-12">
                     @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <strong>{{ session('success') }}</strong>

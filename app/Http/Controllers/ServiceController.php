@@ -21,6 +21,7 @@ class ServiceController extends Controller
     public function serviceCreate(Request $request)
     {
         Service::insert([
+            'iconbox' => $request->iconbox,
             'icon' => $request->icon,
             'title' => $request->title,
             'text' => $request->text,
@@ -35,7 +36,8 @@ class ServiceController extends Controller
     }
     public function serviceUpdate(Request $request, $id)
     {
-        $update = Service::find($id)->update([
+        Service::find($id)->update([
+            'iconbox' => $request->iconbox,
             'icon' => $request->icon,
             'title' => $request->text,
             'text' => $request->text,

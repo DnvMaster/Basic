@@ -18,6 +18,7 @@
                             <thead>
                             <tr>
                                 <th scope="col" width="5%">№</th>
+                                <th scope="col" width="10%">Фон</th>
                                 <th scope="col" width="10%">Иконка</th>
                                 <th scope="col" width="`15%">Заголовок</th>
                                 <th scope="col" width="45%">Текст</th>
@@ -30,6 +31,7 @@
                             @foreach($services as $service)
                                 <tr>
                                     <th scope="row">{{ $i++ }}</th>
+                                    <td>{{ $service->iconbox }}</td>
                                     <td>{{ $service->icon }}</td>
                                     <td>{{ $service->title }}</td>
                                     <td>{{ $service->text }}</td>
