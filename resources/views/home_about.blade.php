@@ -1,3 +1,4 @@
+@include('layouts.body.slider')
 <section id="about-us" class="about-us">
     <div class="container" data-aos="fade-up">
         <div class="section-title">

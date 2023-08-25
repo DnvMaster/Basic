@@ -17,6 +17,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">№</th>
+                                    <th scope="col">Фильтер</th>
                                     <th scope="col">Изображение</th>
                                     <th scope="col">Заголовок</th>
                                     <th scope="col">Краткий текс</th>
@@ -29,6 +30,7 @@
                                 @foreach($images as $image)
                                     <tr>
                                         <th scope="row">{{ $i++ }}</th>
+                                        <td>{{ $image->filter }}</td>
                                         <td><img src="{{ asset($image->img) }}" alt="{{ $image->title }}" title="{{ $image->title }}" style="height: 40px; width: 70px;"></td>
                                         <td>{{ $image->title }}</td>
                                         <td>{{ $image->text }}</td>

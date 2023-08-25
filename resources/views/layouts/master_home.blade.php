@@ -37,7 +37,6 @@
 
 <body>
     @include('layouts.body.header')
-    @include('layouts.body.slider')
     @yield('home_content')
     @include('layouts.body.footer')
 

@@ -9,6 +9,15 @@ use DB;
 
 class ServiceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    public function service()
+    {
+        $service = DB::table('services')->latest()->get();
+        return view('page.service',compact('service'));
+    }
     public function index()
     {
         $services = DB::table('services')->latest()->get();

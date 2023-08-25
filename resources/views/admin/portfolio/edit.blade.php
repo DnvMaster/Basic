@@ -8,6 +8,13 @@
             <div class="card-body">
                 <form action="{{ url('portfolio/update/'.$edit->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Обновить фильтер</label>
+                        <input type="text" name="filter" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" value="{{ $edit->filter }}">
+                        @error('filter')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                     <input type="hidden" name="old_image" value="{{ $edit->img }}">
                     <div class="form-group">
                         <img src="{{ asset($edit->img) }}" alt="{{ $edit->title }}" style="width: 400px; height: 200px;">

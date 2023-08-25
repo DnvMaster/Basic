@@ -23,6 +23,11 @@ class PortfolioController extends Controller
         $images = Portfolio::all();
         return view('admin.portfolio.index',compact('images'));
     }
+    public function Portfolio()
+    {
+        $portfolios = Portfolio::all();
+        return view('page.portfolio', compact('portfolios'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -88,7 +93,7 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $old_img = $request->old_img;
+        //$old_img = $request->old_img;
         $img = $request->file('img');
 
         if ($img)
@@ -100,7 +105,6 @@ class PortfolioController extends Controller
             $last_img = $up_location.$img_name;
             $img->move($up_location,$img_name);
 
-            //unlink($old_img);
             Portfolio::find($id)->update([
                 'img'=> $last_img,
                 'title'=>$request->title,

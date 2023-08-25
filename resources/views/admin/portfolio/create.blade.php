@@ -18,6 +18,13 @@
                     <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
+                            <label for="exampleInputEmail">Введите фильтер</label>
+                            <input type="text" name="filter" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                            @error('filter')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail">Изображение портфолио</label>
                             <input type="file" name="img" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
                             @error('img')

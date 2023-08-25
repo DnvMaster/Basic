@@ -47,6 +47,7 @@ Route::get('/about/edit/{id}',[AboutController::class,'aboutEdit']);
 Route::get('/about/update/{id}',[AboutController::class,'aboutUpdate']);
 Route::get('/about/delete/{id}',[AboutController::class,'aboutDelete']);
 # Page service
+Route::get('/service',[ServiceController::class,'service'])->name('service');
 Route::get('/service/all',[ServiceController::class,'index'])->name('service.all');
 Route::get('/service/add',[ServiceController::class,'serviceAdd'])->name('service.add');
 Route::post('/service/create',[ServiceController::class,'serviceCreate'])->name('service.create');
@@ -54,6 +55,7 @@ Route::get('/service/edit/{id}',[ServiceController::class,'serviceEdit']);
 Route::get('/service/update/{id}',[ServiceController::class,'serviceUpdate']);
 Route::get('/service/delete/{id}',[ServiceController::class,'serviceDelete']);
 # Page Portfolio
+Route::get('/portfolio',[PortfolioController::class,'Portfolio'])->name('portfolio');
 Route::get('/portfolio/all',[PortfolioController::class,'index'])->name('index');
 Route::match(['get','post'],'/portfolio/store',[PortfolioController::class,'store'])->name('store');
 Route::match(['get','post'],'/portfolio/create',[PortfolioController::class,'create'])->name('create');
