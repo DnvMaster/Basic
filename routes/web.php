@@ -79,6 +79,8 @@ Route::post('/brand/update/{id}',[BrandController::class,'updateBrand']);
 Route::get('/brand/delete/{id}',[BrandController::class,'deleteBrand']);
 # Page Contacts
 Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::get('/admin/contact',[ContactController::class,'adminContact'])->name('admin.contact');
+//Route::get('/admin/contact/message',[ContactController::class,'adminMessageContact'])->name('admin.contact.message');
 
 Route::get('images/all',[ImagesController::class,'Images'])->name('images');
 Route::post('/images/add',[ImagesController::class,'allImages'])->name('all-images');

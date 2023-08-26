@@ -19,7 +19,7 @@
                         @endif
                         <div class="card-header">Все категории</div>
                         <div class="card-body">
-                            <table class="table">
+                            <table class="table table table-striped">
                                 <thead>
                                 <tr>
                                     <th scope="col">№</th>
