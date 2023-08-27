@@ -9,7 +9,15 @@ use DB;
 
 class AboutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
+    {
+        return view('page.about');
+    }
+    public function aboutAll()
     {
         $abouts = DB::table('abouts')->latest()->get();
         return view('admin.about.index',compact('abouts'));

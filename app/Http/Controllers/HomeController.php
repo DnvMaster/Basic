@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $abouts = \DB::table('abouts')->first();
-        return view('home',compact('abouts'));
+        return view('page.index');
     }
 }

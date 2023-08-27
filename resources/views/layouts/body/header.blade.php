@@ -8,14 +8,10 @@
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li class="active"><a href="{{ url('/') }}">Главная</a></li>
-
-                <li class="drop-down"><a href="">About</a></li>
-
+                <li><a href="{{ route('about') }}">О нас</a></li>
                 <li><a href="{{ route('service') }}">Сервис</a></li>
                 <li><a href="{{ route('portfolio') }}">Портфолио</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Контакты</a></li>
 
             </ul>
         </nav><!-- .nav-menu -->

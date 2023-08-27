@@ -13,15 +13,15 @@ class ServiceController extends Controller
     {
         $this->middleware('auth');
     }
-    public function service()
-    {
-        $service = DB::table('services')->latest()->get();
-        return view('page.service',compact('service'));
-    }
     public function index()
     {
         $services = DB::table('services')->latest()->get();
         return view('admin.service.index',compact('services'));
+    }
+    public function service()
+    {
+        $service = DB::table('services')->latest()->get();
+        return view('page.service',compact('service'));
     }
     public function serviceAdd()
     {

@@ -29,18 +29,14 @@ Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
-
-Route::get('/home', function ()
-{
-    echo "This is home page";
-});
-Route::get('home',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index'])->name('index');
 # Page slider
 Route::get('/sliders/all',[SliderController::class,'AllSliders'])->name('sliders');
 Route::get('/sliders/add',[SliderController::class,'AddSliders'])->name('sliders.add');
 Route::post('/sliders/store',[SliderController::class,'StoreSliders'])->name('sliders.store');
 # Page about
-Route::get('/about/all',[AboutController::class,'index'])->name('about.all');
+Route::get('/about',[AboutController::class,'index'])->name('about');
+Route::get('/about/all',[AboutController::class,'aboutAll'])->name('about.all');
 Route::get('/about/add',[AboutController::class,'aboutAdd'])->name('about.add');
 Route::get('/about/create',[AboutController::class,'aboutCreate'])->name('about.create');
 Route::get('/about/edit/{id}',[AboutController::class,'aboutEdit']);
@@ -71,7 +67,7 @@ Route::get('/category/delete/{id}',[CategoryController::class,'deleteCategory'])
 Route::get('/category/restore/{id}',[CategoryController::class,'restoreCategory']);
 Route::get('category/complete-removal/{id}',[CategoryController::class,'completeRemovalCategory']);
 # Page Brands
-Route::get('/',[BrandController::class,'index']);
+Route::get('/brand',[BrandController::class,'index']);
 Route::get('/brands/all',[BrandController::class,'Brand'])->name('brands');
 Route::post('/brand/add',[BrandController::class,'storeBrand'])->name('store.brand');
 Route::get('/brand/edit/{id}',[BrandController::class,'editBrand']);
