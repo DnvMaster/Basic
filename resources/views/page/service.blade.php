@@ -7,7 +7,7 @@
                     <h2>Сервис</h2>
                     <ol>
                         <li><a href="{{ url('/') }}">Главная</a></li>
-                        <li><a href="{{ route('service') }}">Сервис</a></li>
+                        <li><a href="{{ route('contact') }}">Контакт</a></li>
                     </ol>
                 </div>
             </div>

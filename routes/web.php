@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
@@ -74,12 +74,17 @@ Route::get('/brand/edit/{id}',[BrandController::class,'editBrand']);
 Route::post('/brand/update/{id}',[BrandController::class,'updateBrand']);
 Route::get('/brand/delete/{id}',[BrandController::class,'deleteBrand']);
 # Page Contacts
-Route::get('/contact',[ContactController::class,'index'])->name('contact');
-Route::get('/admin/contact',[ContactController::class,'adminContact'])->name('admin.contact');
-//Route::get('/admin/contact/message',[ContactController::class,'adminMessageContact'])->name('admin.contact.message');
-
-Route::get('images/all',[ImagesController::class,'Images'])->name('images');
+Route::get('/images/all',[ImagesController::class,'Images'])->name('images');
 Route::post('/images/add',[ImagesController::class,'allImages'])->name('all-images');
+# Page contact
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
+Route::get('/contact/all',[ContactController::class,'contactAll'])->name('contact.all');
+Route::get('/contact/add',[ContactController::class,'contactAdd'])->name('contact.add');
+Route::get('/contact/create',[ContactController::class,'contactCreate'])->name('contact.create');
+Route::get('/contact/edit/{id}',[ContactController::class,'contactEdit']);
+Route::get('/contact/update/{id}',[ContactController::class,'contactUpdate']);
+Route::get('/contact/delete/{id}',[ContactController::class,'contactDelete']);
+Route::post('/contact/form',[ContactController::class,'contactForm'])->name('contact.form');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $users = User::all();

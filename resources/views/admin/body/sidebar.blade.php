@@ -88,7 +88,7 @@
                         data-parent="#sidebar-menu">
                         <div class="sub-menu">
                             <li class="active">
-                                <a class="sidenav-item-link" href="{{ route('admin.contact') }}">
+                                <a class="sidenav-item-link" href="{{ route('contact.add') }}">
                                     <i class="mdi mdi-account-box"></i>
                                     <span class="nav-text">&nbsp; Профиль контакта</span>
                                 </a>

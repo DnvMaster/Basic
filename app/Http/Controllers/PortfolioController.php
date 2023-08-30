@@ -13,11 +13,6 @@ class PortfolioController extends Controller
     {
         $this->middleware('auth');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $images = Portfolio::all();
@@ -28,23 +23,10 @@ class PortfolioController extends Controller
         $portfolios = Portfolio::all();
         return view('page.portfolio', compact('portfolios'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('admin.portfolio.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $img = $request->file('img');
@@ -60,42 +42,14 @@ class PortfolioController extends Controller
         ]);
         return Redirect()->back()->with('success','Изображение успешно установлено.');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $edit = Portfolio::find($id);
         return view('admin.portfolio.edit',compact('edit'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //$old_img = $request->old_img;
         $img = $request->file('img');
-
         if ($img)
         {
             $name_gen = hexdec(uniqid());
@@ -104,7 +58,6 @@ class PortfolioController extends Controller
             $up_location = 'image/portfolio/';
             $last_img = $up_location.$img_name;
             $img->move($up_location,$img_name);
-
             Portfolio::find($id)->update([
                 'img'=> $last_img,
                 'title'=>$request->title,
@@ -121,13 +74,6 @@ class PortfolioController extends Controller
             return Redirect()->back()->with('success','Портфолио успешно обновлено.');
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $images = Portfolio::find($id);

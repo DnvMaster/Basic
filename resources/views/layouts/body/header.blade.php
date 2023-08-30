@@ -11,7 +11,7 @@
                 <li><a href="{{ route('about') }}">О нас</a></li>
                 <li><a href="{{ route('service') }}">Сервис</a></li>
                 <li><a href="{{ route('portfolio') }}">Портфолио</a></li>
-                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="{{ route('contact') }}">Контакты</a></li>
 
             </ul>
         </nav><!-- .nav-menu -->
