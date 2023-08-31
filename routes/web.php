@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\ChangePassword;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
@@ -95,4 +96,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.index');
 })->name('dashboard');
 
+Route::get('user/change-password/',[ChangePassword::class,'changePassword'])->name('change.password');
 Route::get('/user/logout',[IndexController::class,'Logout'])->name('logout');
