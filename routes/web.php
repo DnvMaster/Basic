@@ -85,6 +85,8 @@ Route::get('/contact/edit/{id}',[ContactController::class,'contactEdit']);
 Route::get('/contact/update/{id}',[ContactController::class,'contactUpdate']);
 Route::get('/contact/delete/{id}',[ContactController::class,'contactDelete']);
 Route::post('/contact/form',[ContactController::class,'contactForm'])->name('contact.form');
+Route::get('/contact/admin/message',[ContactController::class,'contactMessage'])->name('contact.admin.message');
+Route::get('/contact/message/delete/{id}',[ContactController::class,'contactMessageDelete']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $users = User::all();

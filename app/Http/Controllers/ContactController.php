@@ -30,6 +30,11 @@ class ContactController extends Controller
         ]);
         return Redirect()->route('contact')->with('success','Сообщение успешно отправлено.');
     }
+    public function contactMessage()
+    {
+        $messages = Contactform::all();
+        return view('admin.contact.contact_message',compact('messages'));
+    }
     public function contactAll()
     {
         $contacts = DB::table('contacts')->latest()->get();
@@ -68,5 +73,10 @@ class ContactController extends Controller
     {
         $delete = Contact::find($id)->delete();
         return Redirect()->route('contact.all')->with('success','Контакт успешно удален.');
+    }
+    public function contactMessageDelete($id)
+    {
+        $message = Contactform::destroy($id);
+        return Redirect()->route('contact')->with('success','Сообщение успешно удалено.');
     }
 }

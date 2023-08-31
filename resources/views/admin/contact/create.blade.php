@@ -27,11 +27,6 @@
                             </div>
 
                         </div>
-                        <div class="mb-3">
-                            <div class="loading">Загрузка...</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Ваши данные успешно отправлены. Спасибо!</div>
-                        </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Отправить</button>
                         </div>

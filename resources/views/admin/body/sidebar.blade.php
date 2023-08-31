@@ -92,7 +92,7 @@
                                     <i class="mdi mdi-account-box"></i>
                                     <span class="nav-text">&nbsp; Профиль контакта</span>
                                 </a>
-                                <a class="sidenav-item-link" href="">
+                                <a class="sidenav-item-link" href="{{ route('contact.admin.message') }}">
                                     <i class="mdi mdi-message-text"></i>
                                     <span class="nav-text">&nbsp; Сообщение контакта</span>
                                 </a>
