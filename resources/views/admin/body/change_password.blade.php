@@ -5,19 +5,29 @@
             <h2>Смена пользовательского пароля </h2>
         </div>
         <div class="card-body">
-            <form class="form-pill" action="">
+            <form class="form-pill" action="{{ route('password.update') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <div class="form-group">
                         <label for="exampleFormControlInput3">Текущий пароль</label>
-                        <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="Введите текущий пароль">
+                        <input type="password" name="old_password" class="form-control" id="current_password" placeholder="Введите текущий пароль">
+                        @error('old_password')
+                            <span class="text-danger">{{ $massage }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlPassword3">Новый пароль</label>
-                        <input type="password" class="form-control" id="exampleFormControlPassword3" placeholder="Введите новый пароль">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Введите новый пароль">
+                        @error('password')
+                        <span class="text-danger">{{ $massage }}</span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlPassword3">Подтвердите пароль</label>
-                        <input type="password" class="form-control" id="exampleFormControlPassword3" placeholder="Подтвердите пароль">
+                        <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Подтвердите пароль">
+                        @error('password_confirmation')
+                        <span class="text-danger">{{ $massage }}</span>
+                        @enderror
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Сохранить</button>

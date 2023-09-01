@@ -10,4 +10,8 @@ class ChangePassword extends Controller
     {
         return view('admin.body.change_password');
     }
+    public function updatePassword()
+    {
+        //
+    }
 }

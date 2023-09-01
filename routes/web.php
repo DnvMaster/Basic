@@ -97,4 +97,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('user/change-password/',[ChangePassword::class,'changePassword'])->name('change.password');
+Route::post('/password/update',[ChangePassword::class,'updatePassword'])->name('password.update');
+
 Route::get('/user/logout',[IndexController::class,'Logout'])->name('logout');
