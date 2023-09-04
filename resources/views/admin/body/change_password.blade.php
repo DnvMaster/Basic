@@ -12,21 +12,21 @@
                         <label for="exampleFormControlInput3">Текущий пароль</label>
                         <input type="password" name="old_password" class="form-control" id="current_password" placeholder="Введите текущий пароль">
                         @error('old_password')
-                            <span class="text-danger">{{ $massage }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlPassword3">Новый пароль</label>
                         <input type="password" name="password" class="form-control" id="password" placeholder="Введите новый пароль">
                         @error('password')
-                        <span class="text-danger">{{ $massage }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlPassword3">Подтвердите пароль</label>
                         <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Подтвердите пароль">
                         @error('password_confirmation')
-                        <span class="text-danger">{{ $massage }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
