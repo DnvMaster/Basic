@@ -12,7 +12,7 @@
                 <li><a href="{{ route('service') }}">Сервис</a></li>
                 <li><a href="{{ route('portfolio') }}">Портфолио</a></li>
                 <li><a href="{{ route('contact') }}">Контакты</a></li>
-
+                <li><a href="{{ route('login') }}">Войти</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 

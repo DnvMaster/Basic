@@ -43,4 +43,8 @@ class ChangePassword extends Controller
             }
         }
     }
+    public function userProfileUpdate(Request $request)
+    {
+           // return Redirect()->back()->with('success','Профиль пользователя, был успешно обновлён.');
+    }
 }

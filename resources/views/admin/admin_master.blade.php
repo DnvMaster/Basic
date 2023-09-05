@@ -128,16 +128,7 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('change.password') }}">
-                                        <i class="mdi mdi-email"></i> Изменить пароль
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="mdi mdi-diamond-stone"></i> Проекты </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="mdi mdi-settings"></i> Настройки аккаунта </a>
-                                </li>
-
+                                        <i class="mdi mdi-settings"></i> Изменить пароль </a>
                                 <li class="dropdown-footer">
                                     <a href="{{ route('logout') }}"> <i class="mdi mdi-logout"></i> Выход </a>
                                 </li>
